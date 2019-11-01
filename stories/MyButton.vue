@@ -6,16 +6,29 @@
     @click="onClick"
     @dblclick="onDoubleClick">
     {{ label }}
+    <!-- @slot This is the default slot -->
     <slot/>
   </button>
 </template>
 
 <script>
+  /**
+   * Use `MyButton` to highlight key info with a predefined status.
+   */
   export default {
     name: 'MyButton',
     props: {
+      /**
+       * Test label
+       */
       label: [String, Number],
+      /**
+       * Test rounded
+       */
       rounded: Boolean,
+      /**
+       * Test color
+       */
       color: {
         type: String,
         default: '#42b983'
@@ -23,9 +36,19 @@
     },
     methods: {
       onClick($event) {
+        /**
+         * Emitted when the button is clicked.
+         * @event click
+         * @type {Event}
+         */
         this.$emit('click', $event);
       },
       onDoubleClick($event) {
+        /**
+         * Emitted when the button is double clicked.
+         * @event doubleClick
+         * @type {Event}
+         */
         this.$emit('dblclick', $event);
       }
     }
