@@ -1,5 +1,5 @@
 import { actions } from '@storybook/addon-actions';
-import MyButton from './MyButton.vue';
+import MyButton from 'components/MyButton.vue';
 
 export default {
   title: 'MyButton',
@@ -30,7 +30,7 @@ Rounded.story = {
 
 export const Colored = () => ({
   components: { MyButton },
-  template: '<my-button color="#000000">Colred</my-button>'
+  template: '<my-button color="#000000">Colored</my-button>'
 });
 
 Colored.story = {

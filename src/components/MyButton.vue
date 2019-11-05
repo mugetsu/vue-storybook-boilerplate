@@ -5,11 +5,19 @@
     :class="{ rounded }"
     @click="onClick"
     @dblclick="onDoubleClick">
-    {{ label }}
+    <span>{{ label }}</span>
     <!-- @slot This is the default slot -->
     <slot/>
   </button>
 </template>
+
+<style lang="scss" scoped>
+.button {
+  span {
+    color: blue;
+  }
+}
+</style>
 
 <script>
   /**

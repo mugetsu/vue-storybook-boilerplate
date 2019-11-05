@@ -1,15 +1,24 @@
-import { configure, addParameters, addDecorator } from "@storybook/vue";
-import { withA11y } from "@storybook/addon-a11y";
+import { configure, addParameters, addDecorator } from '@storybook/vue'
+import { configureActions } from '@storybook/addon-actions'
+import { withA11y } from '@storybook/addon-a11y'
 
-addDecorator(withA11y);
+addDecorator(withA11y)
 
 addParameters({
   options: {
-    hierarchyRootSeparator: /\|/
+    hierarchyRootSeparator: /\|/,
+    panelPosition: 'bottom'
   },
   docs: {
     inlineStories: true
-  }
-});
+  },
+  backgrounds: [
+    { name: 'dark', value: '#000000' }
+  ]
+})
 
-configure(require.context('../stories', true, /\.stories\.(js|mdx)$/), module);
+configureActions({
+  limit: 5
+})
+
+configure(require.context('../stories', true, /\.stories\.(js|mdx)$/), module)
