@@ -1,16 +1,16 @@
-# Vue Storybook + Storyshots Boilerplate
+# Vue Storybook Boilerplate
 
-Boilerplate for Vue component library powered by Storybook + Storyshots
+Boilerplate for Vue component library powered by Storybook
 
-## Run it locally
+## Install
 
-Install packages using [yarn](https://yarnpkg.com/en/docs/install#mac-stable)
+Using [yarn](https://yarnpkg.com/en/docs/install)
 
 ```bash
 yarn
 ```
 
-Run Storybook
+## Quick Start
 
 ```bash
 yarn storybook
@@ -19,3 +19,7 @@ yarn storybook
 ## Author
 
 [@mugetsu](https://github.com/mugetsu)
+
+## LICENSE
+
+[MIT](https://github.com/mugetsu/vue-storybook-boilerplate/blob/master/LICENSE)

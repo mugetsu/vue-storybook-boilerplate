@@ -1,0 +1,13 @@
+// Overrides
+
+// H2 spacing
+h2:not(.sbdocs-subtitle) {
+  margin-bottom: 24px;
+}
+
+// Centered overflow fix
+div[id*="story--"] {
+  div > div > div {
+    position: relative !important;
+  }
+}
