@@ -1,5 +1,5 @@
-import { actions } from '@storybook/addon-actions';
-import MyButton from 'components/MyButton.vue';
+import { actions } from '@storybook/addon-actions'
+import MyButton from 'components/MyButton/index.vue'
 
 export default {
   title: 'MyButton',
@@ -7,18 +7,19 @@ export default {
   parameters: {
     componentSubtitle: 'This is MyButton'
   }
-};
+}
 
 export const Default = () => ({
   components: { MyButton },
-  template: '<my-button label="I\'m a button!" @click="click" @dblclick="dblclick">(Double) click me to log the action</my-button>',
+  template:
+    '<my-button label="I\'m a button!" @click="click" @dblclick="dblclick">(Double) click me to log the action</my-button>',
   methods: actions({ click: 'clicked', dblclick: 'double clicked' })
-});
+})
 
 export const Rounded = () => ({
   components: { MyButton },
   template: '<my-button :rounded="true">Rounded</my-button>'
-});
+})
 
 Rounded.story = {
   parameters: {
@@ -26,12 +27,12 @@ Rounded.story = {
       storyDescription: 'hell roundz'
     }
   }
-};
+}
 
 export const Colored = () => ({
   components: { MyButton },
   template: '<my-button color="#000000">Colored</my-button>'
-});
+})
 
 Colored.story = {
   parameters: {
@@ -39,4 +40,4 @@ Colored.story = {
       storyDescription: 'meh colour3d'
     }
   }
-};
+}

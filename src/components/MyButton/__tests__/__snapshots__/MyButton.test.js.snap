@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyButton render button rounded 1`] = `
+<button
+  class="button rounded"
+  style="color: rgb(66, 185, 131); border-color: #42b983;"
+>
+  <span>
+    My Button
+  </span>
+   
+</button>
+`;
+
+exports[`MyButton render button with custom color 1`] = `
+<button
+  class="button"
+  style="color: rgb(255, 255, 255); border-color: #ffffff;"
+>
+  <span>
+    My Button
+  </span>
+   
+</button>
+`;
+
+exports[`MyButton render button with label 1`] = `
+<button
+  class="button"
+  style="color: rgb(66, 185, 131); border-color: #42b983;"
+>
+  <span>
+    Label Text
+  </span>
+   
+</button>
+`;
+
+exports[`MyButton renders correctly 1`] = `
+<button
+  class="button"
+  style="color: rgb(66, 185, 131); border-color: #42b983;"
+>
+  <span>
+    
+  </span>
+   
+</button>
+`;

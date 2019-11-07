@@ -1,5 +1,7 @@
 # Vue Storybook Boilerplate
 
+[![Build Status](https://travis-ci.org/mugetsu/vue-storybook-boilerplate.svg?branch=master)](https://travis-ci.org/mugetsu/vue-storybook-boilerplate)
+
 Boilerplate for Vue component library powered by Storybook
 
 ## Install

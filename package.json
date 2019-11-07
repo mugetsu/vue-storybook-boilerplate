@@ -2,7 +2,9 @@
   "name": "vue-storybook-boilerplate",
   "version": "0.1.0",
   "scripts": {
-    "storybook": "start-storybook"
+    "storybook": "start-storybook",
+    "build": "build-storybook",
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
@@ -15,15 +17,45 @@
     "@storybook/addon-links": "5.3.0-alpha.40",
     "@storybook/addon-viewport": "5.3.0-alpha.40",
     "@storybook/vue": "5.3.0-alpha.40",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-vue": "^2.0.2",
+    "jest": "^24.9.0",
     "node-sass": "^4.13.0",
     "sass-loader": "^8.0.0",
+    "sinon": "^7.5.0",
+    "vue-jest": "^3.0.5",
     "vue-loader": "^15.7.1",
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
     "vue": "^2.6.10"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "vue-jest"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/components/**/*.{js,vue}",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": [
+      "html",
+      "text-summary"
+    ]
   },
   "repository": {
     "type": "git",
