@@ -1,8 +1,10 @@
 import { actions } from '@storybook/addon-actions'
+import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 import MyButton from 'components/MyButton/index.vue'
 
 export default {
   title: 'MyButton',
+  decorators: [withKnobs],
   component: MyButton,
   parameters: {
     componentSubtitle: 'This is MyButton'
@@ -12,8 +14,24 @@ export default {
 export const Default = () => ({
   components: { MyButton },
   template:
-    '<my-button label="I\'m a button!" @click="click" @dblclick="dblclick">(Double) click me to log the action</my-button>',
-  methods: actions({ click: 'clicked', dblclick: 'double clicked' })
+    `<my-button
+      :label="label"
+      :color="color"
+      :rounded="rounded"
+      @click="click"
+      @dblclick="dblclick" />`,
+  methods: actions({ click: 'clicked', dblclick: 'double clicked' }),
+  props: {
+    label: {
+      default: text('Label', '(Double) Click me to log the action')
+    },
+    color: {
+      default: text('Color', '#DDDDDD')
+    },
+    rounded: {
+      default: boolean('Is rounded?', false)
+    }
+  }
 })
 
 export const Rounded = () => ({
