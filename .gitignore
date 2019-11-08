@@ -3,6 +3,7 @@ node_modules
 *.DS_Store
 .cache
 junit.xml
-coverage/
+coverage
 package-lock.json
 storybook-static
+__image_snapshots__
