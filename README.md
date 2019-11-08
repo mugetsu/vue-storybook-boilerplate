@@ -18,6 +18,24 @@ yarn
 yarn storybook
 ```
 
+## Build Static Storybook
+
+```bash
+yarn build
+```
+
+## Run Tests
+
+```bash
+yarn test
+```
+
+## Generate Storyshots (Image Snapshots)
+
+```bash
+yarn storyshots
+```
+
 ## Author
 
 [@mugetsu](https://github.com/mugetsu)
