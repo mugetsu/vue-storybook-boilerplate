@@ -20,15 +20,11 @@ describe('MyButton', () => {
     sandbox.restore()
   })
 
-  test('is vue', () => {
-    expect(wrapper.isVueInstance()).toBeTruthy()
-  })
-
-  test('renders correctly', () => {
+  it('should render correctly', () => {
     expect(wrapper.element).toMatchSnapshot()
   })
 
-  test('render button with label', () => {
+  it('should render button with label', () => {
     wrapper = generateWrapper({
       propsData: {
         label: 'Label Text'
@@ -38,7 +34,7 @@ describe('MyButton', () => {
     expect(wrapper.element).toMatchSnapshot()
   })
 
-  test('render button rounded', () => {
+  it('should render button rounded', () => {
     wrapper = generateWrapper({
       propsData: {
         label: 'My Button',
@@ -49,7 +45,7 @@ describe('MyButton', () => {
     expect(wrapper.element).toMatchSnapshot()
   })
 
-  test('render button with custom color', () => {
+  it('should render button with custom color', () => {
     wrapper = generateWrapper({
       propsData: {
         label: 'My Button',
@@ -58,5 +54,29 @@ describe('MyButton', () => {
     })
     expect(wrapper.attributes().style).toBe('color: rgb(255, 255, 255); border-color: #ffffff;')
     expect(wrapper.element).toMatchSnapshot()
+  })
+
+  it('should emit click upon clicking', () => {  
+    wrapper.trigger('click')
+    expect(wrapper.emitted('click')).toHaveLength(1)
+  })
+
+  it('should call onClick once', () => {
+    const mockOnClick = sandbox.stub()
+    wrapper.setMethods({ onClick: mockOnClick })    
+    wrapper.trigger('click')
+    expect(mockOnClick.calledOnce).toBe(true)
+  })
+
+  it('should emit onDoubleClick upon double clicking', () => {
+    wrapper.trigger('dblclick')
+    expect(wrapper.emitted('dblclick')).toHaveLength(1)
+  })
+
+  it('should call onDoubleClick once', () => {
+    const mockOnDoubleClick = sandbox.stub()
+    wrapper.setMethods({ onDoubleClick: mockOnDoubleClick })
+    wrapper.trigger('dblclick')
+    expect(mockOnDoubleClick.calledOnce).toBe(true)
   })
 })

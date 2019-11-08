@@ -5,19 +5,40 @@ const resolve = dir => {
 }
 
 module.exports = async ({ config, mode }) => {
-  config.module.rules.push({
-    test: /\.scss$/,
-    use: ['style-loader', 'css-loader', 'sass-loader'],
-    include: path.resolve(__dirname, '../')
-  })
+  config.module.rules.push(
+    {
+      test: /\.js$/,
+      loader: 'babel-loader',
+      exclude: /node_modules/
+    },
+    {
+      test: /\.scss$/,
+      use: ['style-loader', 'css-loader', 'sass-loader'],
+      include: path.resolve(__dirname, '../')
+    },
+    {
+      test: /\.(png|jpg|gif|svg)$/,
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]?[hash]'
+      }
+    }
+  )
   return {
     ...config,
     resolve: {
       alias: {
         vue$: 'vue/dist/vue.esm.js',
         components: resolve('src/components')
-      },
-      modules: [resolve('node_modules'), resolve('src/components')]
-    }
+      }
+    },
+    devServer: {
+      historyApiFallback: true,
+      noInfo: true
+    },
+    performance: {
+      hints: false
+    },
+    devtool: '#eval-source-map'
   }
 }

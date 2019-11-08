@@ -25,7 +25,7 @@
  * Use `MyButton` to highlight key info with a predefined status.
  */
 export default {
-  name: "MyButton",
+  name: 'MyButton',
   props: {
     /**
      * Test label
@@ -40,33 +40,33 @@ export default {
      */
     color: {
       type: String,
-      default: "#42b983"
+      default: '#42b983'
     }
   },
   methods: {
-    onClick($event) {
+    onClick(e) {
       /**
        * Emitted when the button is clicked.
        * @event click
        * @type {Event}
        */
-      this.$emit("click", $event);
+      this.$emit('click', e)
     },
-    onDoubleClick($event) {
+    onDoubleClick(e) {
       /**
        * Emitted when the button is double clicked.
        * @event doubleClick
        * @type {Event}
        */
-      this.$emit("dblclick", $event);
+      this.$emit('dblclick', e)
     }
   }
-};
+}
 </script>
 
 <style>
 .rounded {
-  border-radius: 5px;
+  border-radius: 6px;
 }
 .button {
   border: 3px solid;
