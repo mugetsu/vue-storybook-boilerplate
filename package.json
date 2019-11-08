@@ -70,6 +70,9 @@
       "<rootDir>/src/components/**/*.{js,vue}",
       "!**/node_modules/**"
     ],
+    "testPathIgnorePatterns" : [
+      "<rootDir>/storyshots.test.js" 
+    ],
     "coverageReporters": [
       "html",
       "text-summary"
